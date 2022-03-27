@@ -1,14 +1,23 @@
-package ru.netology.domain;
+package ru.netology.manager;
+
+import ru.netology.domain.Movies;
 
 public class ManagerFilms {
-    private int release = 9;
+    private int release = 10;
     private Movies[] movie = new Movies[0];
+
+    public ManagerFilms() {
+        this.movie = movie;
+    }
+
+    public ManagerFilms(int release) {
+        this.release = release;
+        this.movie = movie;
+    }
 
     public void add(Movies films) {
         int length = movie.length + 1;
         Movies[] tmp = new Movies[length];
-//        for (int i = 0; i < film.length; i++) {
-//            tmp[i] = film[i];
         System.arraycopy(movie, 0, tmp, 0, movie.length);
         int lastIndex = tmp.length - 1;
         tmp[lastIndex] = films;
@@ -20,18 +29,6 @@ public class ManagerFilms {
         return movie;
     }
 
-//    public void removeById(int id) {
-//        int length = movie.length - 1;
-//        Movies[] tmp = new Movies[length];
-//        int index = 0;
-//        for (Movies films : movie) {
-//            if (films.getId() != id) {
-//                tmp[index] = films;
-//                index++;
-//            }
-//        }
-//        movie = tmp;
-//    }
 
     public Movies[] getMovie() {
         int resultLength;

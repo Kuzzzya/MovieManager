@@ -1,12 +1,13 @@
 package ru.netology.domain;
 
 import org.junit.jupiter.api.Test;
+import ru.netology.manager.ManagerFilms;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ManagerFilmsTest {
 
-    private ManagerFilms man = new ManagerFilms();
+    private ManagerFilms man = new ManagerFilms(10);
 
     private Movies first = new Movies(1, "we", "scream");
     private Movies second = new Movies(2, "ws", "fantastic");
@@ -70,7 +71,7 @@ class ManagerFilmsTest {
 
         man.add(third);
         man.add(four);
-        man.getMovie();
+
         Movies[] expected = {four, third, second, first};
         Movies[] actual = man.getMovie();
         assertArrayEquals(expected, actual);
@@ -92,7 +93,7 @@ class ManagerFilmsTest {
 //        man.add(eleven);
 //        man.add(ten);
 //        man.add(twelve);
-        man.getMovie();
+
         Movies[] expected = {nine, eight, seven, six, five, four, third, second, first};
         Movies[] actual = man.getMovie();
         assertArrayEquals(expected, actual);
@@ -102,6 +103,7 @@ class ManagerFilmsTest {
 
     @Test
     public void veryMoreMoviesButOnlyTen() {
+        ManagerFilms man = new ManagerFilms(9);
 
         man.add(first);
         man.add(second);
