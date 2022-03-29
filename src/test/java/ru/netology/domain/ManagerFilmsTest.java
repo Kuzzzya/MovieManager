@@ -90,9 +90,7 @@ class ManagerFilmsTest {
         man.add(seven);
         man.add(eight);
         man.add(nine);
-//        man.add(eleven);
-//        man.add(ten);
-//        man.add(twelve);
+
 
         Movies[] expected = {nine, eight, seven, six, five, four, third, second, first};
         Movies[] actual = man.getMovie();
@@ -118,7 +116,7 @@ class ManagerFilmsTest {
         man.add(eleven);
         man.add(ten);
         man.add(twelve);
-        man.getMovie();
+
         Movies[] expected = {twelve, ten, eleven, nine, eight, seven, six, five, four,};
         Movies[] actual = man.getMovie();
         assertArrayEquals(expected, actual);

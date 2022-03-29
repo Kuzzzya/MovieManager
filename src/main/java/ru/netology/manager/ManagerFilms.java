@@ -6,8 +6,7 @@ public class ManagerFilms {
     private int release = 10;
     private Movies[] movie = new Movies[0];
 
-    public ManagerFilms() {
-        this.movie = movie;
+    public ManagerFilms(Movies[] movie) {
     }
 
     public ManagerFilms(int release) {
